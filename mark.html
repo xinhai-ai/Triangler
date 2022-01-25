@@ -11,7 +11,11 @@
             oSelect = document.getElementById('sub');
             val = oSelect.value;
             $.get("https://e2qwg4dbmfb14.cfc-execute.bj.baidubce.com/mark_get?sub=" + encodeURI(val) + "&mark=" + document.getElementById("mark").value, function (data, status) {
-                alert("你该科在前: " + data.rank.toString() + "  位  占百分数为: " + data.per.toString() + "  %");
+                if (data.msg == "-1") {
+                    alert("啊哦出错了\n你可以将以下信息截图发给我:\n" + data.error_msg.toString() + "\nSub=" + val + "\nFor_Mark=" + document.getElementById("mark").value)
+                }
+                else { alert("你该科在前: " + data.rank.toString() + "  位  占百分数为: " + data.per.toString() + "  %");}
+                
             });
         });
     });
@@ -44,5 +48,7 @@
 <br>
 <br>
 <h3>如果字号小可以双击或双指放大！</h3>
-<br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br><br><br><br><br><br><br><br><br>
 <b>By 2101 夏彬杰</b>
+<br />
+QQ:2976024458欢迎扩列

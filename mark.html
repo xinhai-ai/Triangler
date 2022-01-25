@@ -1,3 +1,8 @@
+<!DOCTYPE html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>haha</title>
+</head>
 <h1>科目排名查询</h1>
 <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 <script>
@@ -6,7 +11,7 @@
             oSelect = document.getElementById('sub');
             val = oSelect.value;
             $.get("https://e2qwg4dbmfb14.cfc-execute.bj.baidubce.com/mark_get?sub=" + encodeURI(val) + "&mark=" + document.getElementById("mark").value, function (data, status) {
-                alert("你该科在前: " + data.rank.toString() + "位  占百分数为: " + data.per.toString()+"%");
+                alert("你该科在前: " + data.rank.toString() + "  位  占百分数为: " + data.per.toString() + "  %");
             });
         });
     });
@@ -29,4 +34,5 @@
 <b>查询的分数:</b>&nbsp;
 <input id="mark" />
 <p></p>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button>查询</button>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<button>查询</button>

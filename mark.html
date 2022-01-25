@@ -3,7 +3,7 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>haha</title>
 </head>
-<h1>¿ÆÄ¿ÅÅÃû²éÑ¯</h1>
+<h1>ç§‘ç›®æ’åæŸ¥è¯¢</h1>
 <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 <script>
     $(document).ready(function () {
@@ -11,28 +11,28 @@
             oSelect = document.getElementById('sub');
             val = oSelect.value;
             $.get("https://e2qwg4dbmfb14.cfc-execute.bj.baidubce.com/mark_get?sub=" + encodeURI(val) + "&mark=" + document.getElementById("mark").value, function (data, status) {
-                alert("Äã¸Ã¿ÆÔÚÇ°: " + data.rank.toString() + "  Î»  Õ¼°Ù·ÖÊıÎª: " + data.per.toString() + "  %");
+                alert("ä½ è¯¥ç§‘åœ¨å‰: " + data.rank.toString() + "  ä½  å ç™¾åˆ†æ•°ä¸º: " + data.per.toString() + "  %");
             });
         });
     });
 </script>
 <p></p>
 <p></p>
-<b>²éÑ¯µÄ¿ÆÄ¿£º</b>
+<b>æŸ¥è¯¢çš„ç§‘ç›®ï¼š</b>
 <select id="sub">
-    <option value="ÓïÎÄ">ÓïÎÄ</option>
-    <option value="ÊıÑ§">ÊıÑ§</option>
-    <option value="Ó¢Óï">Ó¢Óï</option>
-    <option value="ÕşÖÎ">ÕşÖÎ</option>
-    <option value="ÀúÊ·">ÀúÊ·</option>
-    <option value="ÎïÀí">ÎïÀí</option>
-    <option value="»¯Ñ§">»¯Ñ§</option>
-    <option value="ÉúÎï">ÉúÎï</option>
-    <option value="µØÀí">µØÀí</option>
+    <option value="è¯­æ–‡">è¯­æ–‡</option>
+    <option value="æ•°å­¦">æ•°å­¦</option>
+    <option value="è‹±è¯­">è‹±è¯­</option>
+    <option value="æ”¿æ²»">æ”¿æ²»</option>
+    <option value="å†å²">å†å²</option>
+    <option value="ç‰©ç†">ç‰©ç†</option>
+    <option value="åŒ–å­¦">åŒ–å­¦</option>
+    <option value="ç”Ÿç‰©">ç”Ÿç‰©</option>
+    <option value="åœ°ç†">åœ°ç†</option>
 </select>
 <p></p>
-<b>²éÑ¯µÄ·ÖÊı:</b>&nbsp;
+<b>æŸ¥è¯¢çš„åˆ†æ•°:</b>&nbsp;
 <input id="mark" />
 <p></p>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<button>²éÑ¯</button>
+<button>æŸ¥è¯¢</button>

@@ -1,0 +1,32 @@
+<h1>科目排名查询</h1>
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>
+    $(document).ready(function () {
+        $("button").click(function () {
+            oSelect = document.getElementById('sub');
+            val = oSelect.value;
+            $.get("https://e2qwg4dbmfb14.cfc-execute.bj.baidubce.com/mark_get?sub=" + encodeURI(val) + "&mark=" + document.getElementById("mark").value, function (data, status) {
+                alert("你该科在前: " + data.rank.toString() + "位  占百分数为: " + data.per.toString()+"%");
+            });
+        });
+    });
+</script>
+<p></p>
+<p></p>
+<b>查询的科目：</b>
+<select id="sub">
+    <option value="语文">语文</option>
+    <option value="数学">数学</option>
+    <option value="英语">英语</option>
+    <option value="政治">政治</option>
+    <option value="历史">历史</option>
+    <option value="物理">物理</option>
+    <option value="化学">化学</option>
+    <option value="生物">生物</option>
+    <option value="地理">地理</option>
+</select>
+<p></p>
+<b>查询的分数:</b>&nbsp;
+<input id="mark" />
+<p></p>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button>查询</button>

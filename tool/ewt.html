@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?d6415abf2acd1d31af0bdface4315bbf";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    <title>haha</title>
+</head>
+
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>
+    
+        function getlist () {
+            oSelect = document.getElementById('cousreId').value;
+            $.get("https://service-le618nv2-1301241099.gz.apigw.tencentcs.com/release/helloworld-1644043219?courseid=" + oSelect, function (data, status) {
+                if (data.msg == "1") {
+                    
+                    console.log(data.data)
+                    const table = document.getElementById("refuge-table");
+                    for (i in data.data) {
+                        console.log(data.data[i]);
+                        let row = table.insertRow();
+                        let id = row.insertCell(0);
+                        id.innerHTML = data.data[i][0].toString();
+                        let id1 = row.insertCell(1);
+                        id1.innerHTML = data.data[i][1].toString();
+                        let id2 = row.insertCell(2);
+                        id2.innerHTML = data.data[i][2].toString();
+                        document.getElementById("Text").innerHTML = "";
+                    }
+
+                }
+                else { document.getElementById("Text").innerHTML = "出现错误:" + data.data; }
+
+            });
+        };
+
+        
+    
+  
+    function geturl () {
+        lessonId = document.getElementById('lessonId').value;
+        courseid = document.getElementById('cousreId').value;
+        $.get("https://service-375j4uru-1301241099.gz.apigw.tencentcs.com/release/helloworld-1644049129?lessonid=" + lessonId + "&courseid=" + courseid, function (data, status) {
+            if (data.msg == "1") {
+                console.log(data.data.gaoqing)
+                //window.open(data.data.gaoqing, "_blank")
+                document.getElementById("url").innerHTML = "复制到浏览器下载:" + data.data.gaoqing
+            }
+            else { document.getElementById("Text").innerHTML = "出现错误:" + data.data; }
+        })
+    };
+    
+</script>
+
+<b>输入CousreId:</b>&nbsp;
+<input id="cousreId" />&nbsp;&nbsp; <button id="Getlessonlist" onclick="getlist()">加载课程列表</button>
+<br />
+<br />
+<table id="refuge-table" class="tablep" cellspacing="0" width="30%">
+    <thead>
+        <tr>
+
+            <th width="10">课程ID</th>
+            <th width="10">课程名</th>
+            <th width="10">课程描述</th>
+
+        </tr>
+    </thead>
+    <tbody id="refuge-tbody">
+    </tbody>
+</table>
+<b id="Text"></b>
+<br />
+<br />
+<b>要下载的课程Id:</b>&nbsp;
+<input id="lessonId" />&nbsp;&nbsp; <button id="Getpcmurl" onclick="geturl()">下载</button>
+<br />
+<b id="url"></b>
+<br />
+
+<br />
+<br />
+<br />
+<br />
+<b>By 兴安中学 2101 夏彬杰</b>

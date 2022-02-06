@@ -19,7 +19,7 @@ var _hmt = _hmt || [];
         $("button").click(function () {
             oSelect = document.getElementById('sub');
             val = oSelect.value;
-            $.get("https://e2qwg4dbmfb14.cfc-execute.bj.baidubce.com/mark_get?sub=" + encodeURI(val) + "&mark=" + document.getElementById("mark").value, function (data, status) {
+            $.get("https://service-3mw2x1qk-1301241099.gz.apigw.tencentcs.com/release/mark_get?sub=" + encodeURI(val) + "&mark=" + document.getElementById("mark").value, function (data, status) {
                 if (data.msg == "-1") {
                     alert("啊哦出错了\n你可以将以下信息截图发给我:\n" + data.error_msg.toString() + "\nSub=" + val + "\nFor_Mark=" + document.getElementById("mark").value)
                 }

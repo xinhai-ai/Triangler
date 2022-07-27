@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript">
+
+    var b_iframe = window.parent.parent.document.getElementById("result");
+    var hash_url = window.location.hash;
+    if(hash_url.indexOf("#")>=0){
+        var hash_width = hash_url.split("#")[1].split("|")[0]+"px";
+        var hash_height = hash_url.split("#")[1].split("|")[1]+"px";
+        b_iframe.style.width = hash_width;
+        b_iframe.style.height = hash_height;
+    }
+	function GetDetails() {
+		var b23 =window.btoa(document.getElementById('b23.tv').value) ;
+		const Http = new XMLHttpRequest();
+		const url='b23.html';
+		Http.open("GET", url);
+		Http.send();
+
+		Http.onreadystatechange = (e) => {
+  			  var data = Http.responseText
+  			  data = '<a href = "https://www.baidu.com">123</a>'
+  			  document.getElementById("result").innerHTML = data
+	}
+
+
+	};
+</script>
+<b>输入b23.tv链接:</b>&nbsp;
+<input id="b23.tv" />&nbsp;&nbsp; <button onclick="GetDetails()">加载</button>
+<br>
+<h4>结果:</h4>
+<iframe id="result"></iframe>
+
